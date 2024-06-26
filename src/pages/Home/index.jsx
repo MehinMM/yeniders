@@ -1,26 +1,28 @@
 import './style.css';
+import { nurane } from './style';
+import { Layout} from 'antd';
+import {PhoneOutlined,MailOutlined,SettingOutlined} from '@ant-design/icons';
 
-// import nature from '../../sekil/nature.jpg';
-import {nature,orta} from '../../sekil/sekilE/index';
-import { Layout, Row, Col,Menu} from 'antd';
-import {InfoCircleOutlined,MailOutlined,SettingOutlined} from '@ant-design/icons';
-const { Header, Content, Footer } = Layout;
+import { Nav } from '../../components';
+const { Content, Footer } = Layout;
+const {cnt} = nurane;
+
 
 const items = [
   {
     label: 'Haqqimizda',
-    key: 'mail',
-    icon: <InfoCircleOutlined />
+    key: '0',
+    icon: <PhoneOutlined />
   },
   {
     label: 'Elaqe',
-    key: 'app',
+    key: '1',
     icon: <MailOutlined />,
-    // disabled: true,
+    disabled: false,
   },
   {
     label: 'Xidmetlerimiz',
-    key: 'SubMenu',
+    key: '2',
     icon: <SettingOutlined />,
     children: [
       
@@ -50,51 +52,24 @@ const items = [
   },
 ];
 
+
+
 const Home = () => {
 
   return (
 
     <Layout>
-      <Header style={{
-      
-        backgroundColor:'beige'
-      }} >
-          <Row>
-            <Col span={3} >
-            
-            <img src={nature} alt="" className='home-sekil1' />
-        
-            </Col>
-            
-            <Col span={21}>
-            
-            
-            
-             <Menu mode="horizontal" items={items}
-              style={{
-              backgroundColor:'red',
-              display:'flex',
-              justifyContent:'flex-end'
-              }}/>;
-            
-            
-            
-            </Col>
+     
+     <Nav nav={items}/>
 
-          </Row>
+      <Content style={cnt}> </Content>
 
-      </Header>
-
-      <Content>
-  
-         <img src={orta} alt="" className='orta1' />
-      
-      </Content>
-      
       <Footer>
         Footer
       </Footer>
+
     </Layout>
   );
 };
+
 export default Home;

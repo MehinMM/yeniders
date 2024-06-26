@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route,Navigate,Outlet,Link } from 'react-router-
 import Home from './Home';
 import Contact from './Contact';
 import Profile from './Profile';
+import States from './States';
 
 const App = () => {
   return (
@@ -16,6 +17,8 @@ const App = () => {
             <Route index element={<Home/>} />
             <Route path='contact' element={<Contact/>} />
             <Route path='profile' element={<Profile/>} />
+            <Route path='stat' element={<States/>} />
+
         </Route>
 
         <Route path='*' element={<Navigate to='/404'/>}/>
